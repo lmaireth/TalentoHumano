@@ -130,6 +130,20 @@ public class VentanaEmpleados extends JFrame {
         return String.format("$ %,.0f", valor);
     }
 
+    // EVENTOS
+
+    private void conectarEventos() {
+        cmbTipo.addActionListener(e -> {
+            boolean esAdministrativo = tipoSeleccionado().equals("Administrativo");
+            txtBonificacion.setEnabled(esAdministrativo);
+            if (!esAdministrativo) {
+                txtBonificacion.setText("");
+            }
+        });
+
+
+    }
+
 
 
 }
