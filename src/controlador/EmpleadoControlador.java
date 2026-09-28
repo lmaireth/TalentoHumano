@@ -82,8 +82,8 @@ public class EmpleadoControlador {
 
     // OPERACIONES CRUD
 
-    public String agregarEmpleado(String cedula, String nombre, String salario,
-                                  String tipo, String bonificacion) {
+    public String agregarEmpleado(String cedula, String nombre, String salario, String tipo, String bonificacion) {
+
         String error = validar(cedula, nombre, salario, tipo, bonificacion);
         if (error != null) {
             return error;
@@ -138,5 +138,8 @@ public class EmpleadoControlador {
         return total;
     }
 
+    public ArrayList<String> obtenerHistorial() {
+        return historial;
+    }
 
 }
