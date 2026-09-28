@@ -156,6 +156,11 @@ public class VentanaEmpleados extends JFrame {
 
     }
 
+    private void mostrarResultado(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje);
+        refrescarTabla();
+    }
+
 
 
 }
