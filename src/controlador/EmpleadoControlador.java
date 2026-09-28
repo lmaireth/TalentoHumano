@@ -96,6 +96,12 @@ public class EmpleadoControlador {
         return "Ya existe un empleado con la cédula " + cedula + ".";
     }
 
+    public EmpleadoBase buscarEmpleado(String cedula) {
+        historial.add("BÚSQUEDA: " + cedula);
+        return repositorio.buscar(cedula);
+    }
+
+
 
 
 }
