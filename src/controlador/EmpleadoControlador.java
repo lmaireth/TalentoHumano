@@ -130,5 +130,13 @@ public class EmpleadoControlador {
         return repositorio.listarTodos();
     }
 
+    public double calcularTotalNomina() {
+        double total = 0;
+        for (EmpleadoBase empleado : repositorio.listarTodos()) {
+            total += empleado.calcularSalarioTotal();
+        }
+        return total;
+    }
+
 
 }
