@@ -161,6 +161,32 @@ public class VentanaEmpleados extends JFrame {
         refrescarTabla();
     }
 
+    private void buscar() {
+        String cedula = texto(txtCedula);
+
+        if (cedula.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Escribe una cédula para buscar.");
+            return;
+        }
+
+        EmpleadoBase empleado = controlador.buscarEmpleado(cedula);
+        if (empleado == null) {
+            JOptionPane.showMessageDialog(this,
+                    "No se encontró ningún empleado con la cédula " + cedula + ".");
+            return;
+        }
+
+        txtNombre.setText(empleado.getNombre());
+        txtSalario.setText(String.format("%.0f", empleado.getSalarioBase()));
+        cmbTipo.setSelectedItem(empleado.getTipo());
+
+        if (empleado instanceof EmpleadoAdministrativo) {
+            EmpleadoAdministrativo administrativo = (EmpleadoAdministrativo) empleado;
+            txtBonificacion.setText(String.format("%.0f", administrativo.getBonificacion()));
+        }
+
+    }
+
 
 
 }
