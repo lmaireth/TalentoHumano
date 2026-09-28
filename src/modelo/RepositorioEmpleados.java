@@ -27,4 +27,12 @@ public class RepositorioEmpleados {
         return true;
     }
 
+    public boolean eliminar(String cedula){
+        return empleados.remove(cedula) != null;
+    }
+
+    public ArrayList<EmpleadoBase> listarTodos(){
+        return new ArrayList<>(empleados.values());
+    }
+
 }
