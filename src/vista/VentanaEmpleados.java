@@ -187,6 +187,20 @@ public class VentanaEmpleados extends JFrame {
 
     }
 
+    private void eliminar() {
+        String cedula = texto(txtCedula);
+
+        int respuesta = JOptionPane.showConfirmDialog(this,
+                "¿Seguro que deseas eliminar al empleado con cédula " + cedula + "?",
+                "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+
+        if (respuesta == JOptionPane.YES_OPTION) {
+            mostrarResultado(controlador.eliminarEmpleado(cedula));
+            limpiarFormulario();
+        }
+    }
+
+
 
 
 }
