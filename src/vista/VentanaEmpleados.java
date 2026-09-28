@@ -50,5 +50,20 @@ public class VentanaEmpleados extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    private JPanel construirFormulario() {
+        JPanel campos = new JPanel(new GridLayout(5, 2, 8, 8));
+        campos.add(new JLabel("Cédula:"));
+        campos.add(txtCedula);
+        campos.add(new JLabel("Nombre completo:"));
+        campos.add(txtNombre);
+        campos.add(new JLabel("Salario base:"));
+        campos.add(txtSalario);
+        campos.add(new JLabel("Tipo de empleado:"));
+        campos.add(cmbTipo);
+        campos.add(new JLabel("Bonificación (solo administrativos):"));
+        campos.add(txtBonificacion);
+        txtBonificacion.setEnabled(false);
+
+    }
 
 }
