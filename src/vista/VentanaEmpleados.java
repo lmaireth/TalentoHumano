@@ -126,6 +126,10 @@ public class VentanaEmpleados extends JFrame {
         );
     }
 
+    private String formatoPesos(double valor) {
+        return String.format("$ %,.0f", valor);
+    }
+
 
 
 }
