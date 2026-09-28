@@ -14,5 +14,30 @@ public class EmpleadoBase {
 
         }
 
+        public String getCedula() {
+            return cedula;
+        }
+        public String getNombre() {
+            return nombre;
+        }
+        public double getSalarioBase() {
+            return salarioBase;
+        }
+
+        public void setSalarioBase(double salarioBase) {
+            if (salarioBase >= 0) {
+                this.salarioBase = salarioBase;
+            }  else {
+                this.salarioBase = 0;
+            }
+        }
+
+        public double calcularSalarioTotal(){
+            return salarioBase;
+        }
+
+        public String getTipo(){
+            return "Operativo";
+        }
 
 }
