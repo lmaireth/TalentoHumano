@@ -200,6 +200,15 @@ public class VentanaEmpleados extends JFrame {
         }
     }
 
+    private void limpiarFormulario() {
+        txtCedula.setText("");
+        txtNombre.setText("");
+        txtSalario.setText("");
+        txtBonificacion.setText("");
+        cmbTipo.setSelectedIndex(0);
+        txtCedula.requestFocus();
+    }
+
 
 
 
