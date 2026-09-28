@@ -15,5 +15,16 @@ public class RepositorioEmpleados {
         return true;
     }
 
+    public EmpleadoBase buscar(String cedula){
+        return empleados.get(cedula);
+    }
+
+    public boolean actualizar(EmpleadoBase empleado){
+        if(empleados.containsKey(empleado.getCedula())){
+            return false;
+        }
+        empleados.put(empleado.getCedula(), empleado);
+        return true;
+    }
 
 }
