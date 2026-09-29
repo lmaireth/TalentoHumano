@@ -14,5 +14,10 @@ public class EmpleadoComercial extends EmpleadoBase{
         return porcentajeComision;
     }
 
+    @Override
+    public double calcularSalarioTotal() {
+        return getSalarioBase() + (getSalarioBase() * porcentajeComision / 100);
+    }
+
 
 }
