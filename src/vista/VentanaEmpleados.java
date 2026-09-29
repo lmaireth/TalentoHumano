@@ -135,7 +135,9 @@ public class VentanaEmpleados extends JFrame {
     private void conectarEventos() {
         cmbTipo.addActionListener(e -> {
             boolean esAdministrativo = tipoSeleccionado().equals("Administrativo");
-            txtBonificacion.setEnabled(esAdministrativo);
+            boolean esComercial = tipoSeleccionado().equals("Comercial");
+            txtBonificacion.setEnabled(esAdministrativo || esComercial);
+
             if (!esAdministrativo) {
                 txtBonificacion.setText("");
             }
