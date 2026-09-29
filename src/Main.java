@@ -8,7 +8,7 @@ public class Main {
 
         SwingUtilities.invokeLater(() -> {
             EmpleadoControlador controlador = new EmpleadoControlador();
-
+            VentanaEmpleados ventana = new VentanaEmpleados(controlador);
 
         });
     }
