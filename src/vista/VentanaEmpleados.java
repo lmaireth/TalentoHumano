@@ -60,7 +60,7 @@ public class VentanaEmpleados extends JFrame {
         campos.add(txtSalario);
         campos.add(new JLabel("Tipo de empleado:"));
         campos.add(cmbTipo);
-        campos.add(new JLabel("Bonificación (solo administrativos):"));
+        campos.add(new JLabel("Bonificación / Comisión %:"));
         campos.add(txtBonificacion);
         txtBonificacion.setEnabled(false);
 
@@ -136,9 +136,10 @@ public class VentanaEmpleados extends JFrame {
         cmbTipo.addActionListener(e -> {
             boolean esAdministrativo = tipoSeleccionado().equals("Administrativo");
             boolean esComercial = tipoSeleccionado().equals("Comercial");
+
             txtBonificacion.setEnabled(esAdministrativo || esComercial);
 
-            if (!esAdministrativo) {
+            if (!esAdministrativo && !esComercial) {
                 txtBonificacion.setText("");
             }
         });
